@@ -19,7 +19,7 @@ The following exercises are meant to give Spiff a glimpse into how you would tac
 Thank you for taking the time to complete this coding assessment. Don't stress too much about any one thing - just do the best you can with the time you're given! 
 
 
-### Mark your start and finish
+### Mark your start and finish times
 
 start:
 
