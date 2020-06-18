@@ -1,7 +1,7 @@
 # Spiff Front-end Candidate Coding Exercises
 
 ### Purpose 
-The following exercises are meant to give Spiff a glimpse into how you would tackle actual feature requests by the product team. The exercises are relatively simple for time reasons, but you are encouraged to treat them as if you were working on the spiff codebase. This means applying the same attention to code quality, tests, pull requests, commits, etc unless otherwise noted in the exercise.
+The following exercises are meant to help Spiff gain insight into how you would tackle actual feature requests by the product team. The exercises are relatively simple, but you are encouraged to treat them as if you were working on the spiff codebase. This means applying the same attention to code quality, testing, pull requests, commits, etc as you normally would. Quality is valued above quantity.
 
 ### Instructions
 1. Clone the repo
@@ -12,15 +12,17 @@ The following exercises are meant to give Spiff a glimpse into how you would tac
 5. Mark your finish time at the bottom of this README.md
 
 ### Guidelines
-- Spend no more than 3 hours in total. There are likely more steps than you can complete in the alloted time frame. Try to do them in order, but you're allowed to skip steps if you get stuck.
-- Feel free to use any non-human resources you like: StackOverflow, Google, reference code on Github, etc.
-- If you run out of time, please add a few quick comments explaining what you would have done to finish. The same is true if the instructions were unclear.
 
-Thank you for taking the time to complete this coding assessment. Don't stress too much about any one thing - just do the best you can with the time you're given! 
+- Testing: write unit tests where you can and don't worry about component tests.
+- Try to limit your total time to 3 hours. If you feel like you need more time to adequetly express you ability and thought process, please do. There are likely more steps than you can complete in 3 hours. 
+- Feel free to use any non-human resources you like: StackOverflow, Google, reference code on Github, etc.
+- If you run out of time, please add a few quick comments explaining what you would have done if you had more time. The same is true if instructions were unclear or if you have any other thoughts.
+
+Thank you for taking the time to complete this coding assessment! Don't stress too much about any one thing, we evaluate the exercises holistically.
 
 
 ### Mark your start and finish times
 
-start:
+Start:
 
-finish:
+Finish:
