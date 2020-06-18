@@ -5,13 +5,14 @@ The following exercises are meant to help Spiff gain insight into how you would 
 
 ### Instructions
 1. Clone the repo
-2. Retreive dependencies: `yarn`
-3. Mark your start time at the bottom of this README.md
-4. Start the dev server: `yarn start`. The app should open on http://localhost:3000
-5. Choose one of the exercises on the index page
-6. Review the specs provided for the exercise
-7. Complete the exercise by providing a `solution` prop to the corresponding component. E.g. The ProgressBar exercise is found in ProgressBar.js.
-8. Mark your finish time at the bottom of this README.md
+2. Mark your start time at the bottom of this README.md
+3. Retreive dependencies: `yarn`, and start the dev server: `yarn start`. The app should open on http://localhost:3000
+4. For each exercise: 
+  - click the link on the index page
+  - review the specs provided for the exercise
+  - complete the `Solution` compenent for the exercise (the ProgressBar exercise is found in ProgressBar.js)
+5. Review and complete the other exercise
+6. Mark your finish time at the bottom of this README.md
 
 ### Guidelines
 
