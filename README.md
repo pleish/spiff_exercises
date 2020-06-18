@@ -1,6 +1,6 @@
 # Spiff Front-end Candidate Coding Exercises
 
-### Purpose 
+### Purpose
 The following exercises are meant to help Spiff gain insight into how you would tackle actual feature requests by the product team. The exercises are relatively simple, but you are encouraged to treat them as if you were working on the spiff codebase. This means applying the same attention to code quality, testing, pull requests, commits, etc as you normally would. Quality is valued above quantity.
 
 ### Instructions
@@ -13,7 +13,7 @@ The following exercises are meant to help Spiff gain insight into how you would 
 
 ### Guidelines
 
-- Try to limit your total time to 3 hours. If you feel like you need more time to adequetly express you ability and thought process, please do. There are likely more steps than you can complete in 3 hours. 
+- Try to limit your total time to 3 hours. If you feel like you need more time to adequately express your ability and thought process, please do. There are likely more steps than you can complete in 3 hours.
 - Testing: write unit tests where you can and don't worry about component tests.
 - Place css and test files beside the component they relate to (same directory)
 - Feel free to use any non-human resources you like: StackOverflow, Google, reference code on Github, etc.
