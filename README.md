@@ -5,7 +5,7 @@ The following exercises are meant to help Spiff gain insight into how you would 
 
 ### Instructions
 1. Clone the repo
-2. Retreive dependencies `yarn`
+2. Retreive dependencies: `yarn`
 3. Mark your start time at the bottom of this README.md
 4. Start the dev server: `yarn start`. The app should open on http://localhost:3000
 5. Choose one of the exercises on the index page
