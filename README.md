@@ -13,7 +13,7 @@ The following exercises are meant to help Spiff gain insight into how you would 
 
 ### Guidelines
 
-- Try to limit your total time to 3 hours. If you feel like you need more time to adequately express your ability and thought process, please do. There are likely more steps than you can complete in 3 hours.
+- Try to limit your total time to 3.5 hours. If you feel like you need more time to adequately demonstrate your ability and thought process, please do. There are likely more steps than you can complete in 3.5 hours.
 - Testing: write unit tests where you can and don't worry about component tests.
 - Place css and test files beside the component they relate to (same directory)
 - Feel free to use any non-human resources you like: StackOverflow, Google, reference code on Github, etc.
