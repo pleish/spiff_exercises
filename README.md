@@ -6,7 +6,7 @@ These coding exercises are meant to help Spiff gain insight into how you would t
 ### Instructions
 1. Clone the repo - This is your start time 
 2. Retreive dependencies: `yarn`, and start the dev server: `yarn start`. The app should open on http://localhost:3000
-3. For each exercise: 
+3. This will take you to an index that lists the exercises. For each exercise: 
   - click the link on the index page
   - review the specs provided for the exercise
   - complete the `Solution` compenent for the exercise (the ProgressBar exercise is found in ProgressBar.js)
