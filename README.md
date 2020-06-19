@@ -22,9 +22,3 @@ These coding exercises are meant to help Spiff gain insight into how you would t
 
 Thank you for taking the time to complete this coding assessment! Don't stress too much about any one thing, we evaluate the exercises holistically.
 
-
-### Mark your start and finish times
-
-Start:
-
-Finish:
