@@ -5,7 +5,7 @@ const Parser = () => {
   return (
     <div className="parser">
       <Exercise
-        solution = {"Add solution here"}
+        solution = {<Solution />}
         specsUrl = "https://github.com/CommissionAI/spiff_react_exercises/issues/2"
         title    = "Parser Exercise"
       />
@@ -14,3 +14,11 @@ const Parser = () => {
 }
 
 export default Parser
+
+// ----------------------------------------------------------------------------------
+
+const Solution = () => {
+  return (
+    <div>Add solution here</div>
+  )
+}
