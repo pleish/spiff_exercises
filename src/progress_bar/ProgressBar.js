@@ -1,6 +1,7 @@
 import React from "react";
 import Exercise from "../exercise/Exercise";
 import colors from "../shared_styles/colors.scss";
+import PropTypes from "prop-types";
 
 const ProgressBarPage = () => {
   return (
@@ -18,14 +19,38 @@ export default ProgressBarPage;
 
 // ----------------------------------------------------------------------------------
 
-class ProgressBar extends React.Component {
+export class ProgressBar extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      percentHidden: 100,
+    };
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.percentage !== this.props.percentage) {
+      this.updatePercentHidden();
+    }
+  }
+
+  updatePercentHidden() {
+    if (this.props.breakpoints) {
+      const breakpoint = this.props.breakpoints
+        .sort((a, b) => a - b)
+        .find((bp) => bp >= this.props.percentage);
+      this.setState({ percentHidden: 100 - breakpoint });
+    } else {
+      this.setState({ percentHidden: 100 - this.props.percentage });
+    }
+  }
+
   render() {
     return (
       <div className="progress-bar" style={{ opacity: this.props.barOpacity }}>
         <div
           className="progress-cover"
           style={{
-            width: `${100 - this.props.percentage}%`,
+            width: `${this.state.percentHidden}%`,
           }}
         ></div>
       </div>
@@ -33,23 +58,33 @@ class ProgressBar extends React.Component {
   }
 }
 
-class RequestBtn extends React.Component {
-  setBorderWidth = (event, width) => {
-    event.target.style.borderWidth = width;
-  };
+ProgressBar.propTypes = {
+  percentage: PropTypes.number.isRequired,
+  barOpacity: PropTypes.number.isRequired,
+  breakpoints: PropTypes.arrayOf(PropTypes.number),
+};
+
+export class RequestBtn extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      class: "request-btn normal",
+    };
+  }
 
   render() {
     return (
       <button
-        className="request-btn"
+        className={this.state.class}
         style={{
           color: this.props.color,
           borderColor: this.props.color,
         }}
-        onMouseEnter={(e) => this.setBorderWidth(e, "2px")}
-        onMouseLeave={(e) => this.setBorderWidth(e, "1px")}
-        onMouseDown={(e) => this.setBorderWidth(e, "3px")}
-        onMouseUp={(e) => this.setBorderWidth(e, "2px")}
+        onMouseEnter={() => this.setState({ class: "request-btn hovered" })}
+        onMouseLeave={() => this.setState({ class: "request-btn normal" })}
+        onMouseDown={() => this.setState({ class: "request-btn clicked" })}
+        onMouseUp={() => this.setState({ class: "request-btn hovered" })}
         onClick={() => this.props.onClick()}
       >
         {this.props.children}
@@ -58,7 +93,13 @@ class RequestBtn extends React.Component {
   }
 }
 
-class Solution extends React.Component {
+RequestBtn.propTypes = {
+  color: PropTypes.string,
+  onClick: PropTypes.func,
+  children: PropTypes.string,
+};
+
+export class Solution extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -66,8 +107,8 @@ class Solution extends React.Component {
       blockLoad: false,
       time: 0,
       start: 0,
-      timeInterval: 100,
       barOpacity: 1.0,
+      timerOn: false,
     };
     this.startTimer = this.startTimer.bind(this);
     this.stopTimer = this.stopTimer.bind(this);
@@ -78,9 +119,10 @@ class Solution extends React.Component {
     clearInterval(this.timer);
     this.setState({
       time: 0,
+      timerOn: true,
       start: Date.now(),
       barOpacity: 1,
-      percentage: this.state.blockLoad ? 10 : 0
+      percentage: 0,
     });
     this.timer = setInterval(() => {
       if (this.state.time <= 15000) {
@@ -91,12 +133,17 @@ class Solution extends React.Component {
       } else {
         clearInterval(this.timer);
       }
-    }, this.state.timeInterval);
+    }, 100);
   }
 
   stopTimer() {
     clearInterval(this.timer);
-    this.setState({ time: 0, start: Date.now(), percentage: 100});
+    this.setState({
+      time: 0,
+      timerOn: false,
+      start: Date.now(),
+      percentage: 100,
+    });
     this.timer = setInterval(() => {
       if (this.state.time <= 3000) {
         this.setState({
@@ -110,35 +157,30 @@ class Solution extends React.Component {
   }
 
   resetTimer() {
-    clearInterval(this.timer)
-    this.setState({ time: 0, percentage: 0 });
+    clearInterval(this.timer);
+    this.setState({ percentage: 0 });
   }
 
   toggleLoadStyle() {
     this.setState({
       blockLoad: !this.state.blockLoad,
     });
-    if (this.state.blockLoad) {
-      this.setState({
-        timeInterval: 100,
-      });
-    } else {
-      this.setState({
-        timeInterval: 0.25 * 15000,
-      });
-    }
   }
 
   render() {
     return (
       <div>
         <ProgressBar
+          breakpoints={this.state.blockLoad ? [10, 50, 80, 90] : null}
           percentage={this.state.percentage}
           barOpacity={this.state.barOpacity}
         ></ProgressBar>
         <div className="request-btn-row">
-          <RequestBtn color={colors.green} onClick={this.startTimer}>
-            START REQUEST
+          <RequestBtn
+            color={colors.green}
+            onClick={this.state.timerOn ? () => {} : this.startTimer}
+          >
+            {this.state.timerOn ? "Loading..." : "Start Request"}
           </RequestBtn>
           <div className="percent-switch">
             <input

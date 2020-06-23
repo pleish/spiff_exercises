@@ -33,6 +33,18 @@
     align-items: center;
 }
 
+.request-btn.hovered {
+    border-width: 2px;
+}
+
+.request-btn.normal {
+    border-width: 1px;
+}
+
+.request-btn.clicked {
+    border-width: 3px;
+}
+
 .percent-switch {
     display: flex;
     flex-direction: column;
