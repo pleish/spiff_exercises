@@ -1,5 +1,6 @@
 import React from "react";
 import Exercise from "../exercise/Exercise";
+import { ExerciseBtn } from "../exercise/Exercise";
 import colors from "../shared_styles/colors.scss";
 import PropTypes from "prop-types";
 
@@ -62,41 +63,6 @@ ProgressBar.propTypes = {
   percentage: PropTypes.number.isRequired,
   barOpacity: PropTypes.number.isRequired,
   breakpoints: PropTypes.arrayOf(PropTypes.number),
-};
-
-export class RequestBtn extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      class: "request-btn normal",
-    };
-  }
-
-  render() {
-    return (
-      <button
-        className={this.state.class}
-        style={{
-          color: this.props.color,
-          borderColor: this.props.color,
-        }}
-        onMouseEnter={() => this.setState({ class: "request-btn hovered" })}
-        onMouseLeave={() => this.setState({ class: "request-btn normal" })}
-        onMouseDown={() => this.setState({ class: "request-btn clicked" })}
-        onMouseUp={() => this.setState({ class: "request-btn hovered" })}
-        onClick={() => this.props.onClick()}
-      >
-        {this.props.children}
-      </button>
-    );
-  }
-}
-
-RequestBtn.propTypes = {
-  color: PropTypes.string,
-  onClick: PropTypes.func,
-  children: PropTypes.string,
 };
 
 export class Solution extends React.Component {
@@ -175,13 +141,13 @@ export class Solution extends React.Component {
           percentage={this.state.percentage}
           barOpacity={this.state.barOpacity}
         ></ProgressBar>
-        <div className="request-btn-row">
-          <RequestBtn
+        <div className="exercise-btn-row">
+          <ExerciseBtn
             color={colors.green}
             onClick={this.state.timerOn ? () => {} : this.startTimer}
           >
             {this.state.timerOn ? "Loading..." : "Start Request"}
-          </RequestBtn>
+          </ExerciseBtn>
           <div className="percent-switch">
             <input
               type="checkbox"
@@ -190,9 +156,9 @@ export class Solution extends React.Component {
             ></input>
             <span>Block Load</span>
           </div>
-          <RequestBtn color={colors.red} onClick={this.stopTimer}>
+          <ExerciseBtn color={colors.red} onClick={this.stopTimer}>
             FINISH REQUEST
-          </RequestBtn>
+          </ExerciseBtn>
         </div>
       </div>
     );

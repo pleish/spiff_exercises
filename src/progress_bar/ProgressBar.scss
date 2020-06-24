@@ -14,35 +14,12 @@
     background: $white;
 }
 
-.request-btn-row {
+.exercise-btn-row {
     width: 100%;
     height: 400px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-}
-
-.request-btn {
-    font-weight: 500;
-    border: 1px solid;
-    border-radius: 30px;
-    width: 175px;
-    height: 45px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.request-btn.hovered {
-    border-width: 2px;
-}
-
-.request-btn.normal {
-    border-width: 1px;
-}
-
-.request-btn.clicked {
-    border-width: 3px;
 }
 
 .percent-switch {

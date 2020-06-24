@@ -1,10 +1,11 @@
 import React from "react";
-import { RequestBtn, ProgressBar, Solution } from "./ProgressBar";
+import { ExerciseBtn } from "../exercise/Exercise";
+import { ProgressBar, Solution } from "./ProgressBar";
 import { shallow } from "enzyme";
 
 describe("Toggle RequestBtn", () => {
   it("check class", () => {
-    const wrapper = shallow(<RequestBtn color="green" />);
+    const wrapper = shallow(<ExerciseBtn color="green" />);
     expect(wrapper.state("class")).toBe("request-btn normal");
 
     wrapper.simulate("mouseenter");
@@ -38,7 +39,7 @@ describe("Solution timer", () => {
     expect(wrapper.state("blockLoad")).toBe(false);
     expect(wrapper.state("barOpacity")).toBe(1.0);
 
-    wrapper.find(RequestBtn).first().simulate("click");
+    wrapper.find(ExerciseBtn).first().simulate("click");
     setTimeout(() => {
       expect(wrapper.state("percentage")).toBeLessThan(91);
       expect(wrapper.state("percentage")).toBeGreaterThanOrEqual(90);

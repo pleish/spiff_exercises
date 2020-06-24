@@ -1,0 +1,39 @@
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 25% 25% 50%;
+    grid-template-rows: 280px 100px;
+    grid-column-gap: 5px;
+    grid-row-gap: 25px;
+    justify-items: center;
+}
+
+.parser-text-area {
+    width: 100%;
+    resize: none;
+}
+
+.letter-list {
+    column-count: 2;
+    width: 100%;
+    text-align: center;
+    .letter-item {
+        cursor: pointer;
+    }
+    .letter-item:hover {
+        font-weight: bold;
+    }
+}
+
+.highlighted-word {
+    background-color: yellow;
+}
+
+.char {
+    font-weight: normal;
+    background-color: inherit;
+}
+.char.bold {
+    font-weight: bold;
+}
+

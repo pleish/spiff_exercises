@@ -6,3 +6,26 @@
     padding: 20px;
   }
 }
+
+.exercise-btn {
+  font-weight: 500;
+  border: 1px solid;
+  border-radius: 30px;
+  width: 175px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exercise-btn.hovered {
+  border-width: 2px;
+}
+
+.exercise-btn.normal {
+  border-width: 1px;
+}
+
+.exercise-btn.clicked {
+  border-width: 3px;
+}
